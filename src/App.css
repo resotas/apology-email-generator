@@ -24,32 +24,6 @@ body {
   overflow: hidden;
 }
 
-/* タブの設定 */
-.tab {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 600px;
-  overflow-x: auto;
-}
-
-.tab button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 4px;
-  background-color: #4CAF50;
-  color: white;
-  font-size: 1em;
-  cursor: pointer;
-  flex-grow: 1;
-  text-align: center;
-}
-
-.tab button.active {
-  background-color: #45a049;
-}
-
 /* フォーム要素のスタイル */
 input[type="text"], select, textarea {
   width: 100%;
@@ -71,7 +45,24 @@ button {
   border-radius: 4px;
   background-color: #4CAF50;
   color: white;
+  width: auto;
+  min-width: 100px;
+  align-self: center; /* ボタンを中央に配置 */
+}
+
+/* メール内容の表示領域 */
+pre {
+  font-size: 1em;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
   width: 100%;
+  max-width: 100%;
+  white-space: pre-wrap; /* 長いテキストを画面幅で折り返し */
+  word-wrap: break-word;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* スマートフォンサイズのスタイル調整 */
@@ -103,8 +94,8 @@ button {
   pre {
     font-size: 0.9em;
     padding: 10px;
-    white-space: pre-wrap; /* 改行で折り返しを有効にする */
-    word-wrap: break-word; /* 長い単語を折り返す */
+    white-space: pre-wrap;
+    word-wrap: break-word;
     overflow: hidden;
     box-sizing: border-box;
   }
