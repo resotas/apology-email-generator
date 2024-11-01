@@ -9,7 +9,7 @@ function TemplateOptions({ onTemplateSelect, formData, setFormData }) {
   const handleTemplateChange = (e) => {
     const selectedTemplate = e.target.value;
     onTemplateSelect(selectedTemplate);
-    setFormData({ ...formData, template: selectedTemplate });
+    setFormData({ ...formData, template: selectedTemplate }); // テンプレート名を明示的に保存
   };
 
   return (
@@ -53,6 +53,7 @@ function TemplateOptions({ onTemplateSelect, formData, setFormData }) {
           onChange={handleInputChange}
         />
 
+        {/* ミス報告テンプレート用の追加フィールド */}
         {formData.template === "mistakeReport" && (
           <>
             <textarea
