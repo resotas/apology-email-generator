@@ -7,14 +7,14 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  overflow-x: hidden; /* 横スクロールを無効化 */
+  overflow-x: hidden;
 }
 
 .App {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   padding: 20px;
   box-sizing: border-box;
@@ -45,9 +45,9 @@ button {
   border-radius: 4px;
   background-color: #4CAF50;
   color: white;
-  width: fit-content;
+  width: auto;
   min-width: 100px;
-  align-self: center; /* ボタンを中央に配置 */
+  align-self: center;
 }
 
 /* メール内容の表示領域 */
@@ -59,10 +59,38 @@ pre {
   border-radius: 4px;
   width: 100%;
   max-width: 100%;
-  white-space: pre-wrap; /* 長いテキストを画面幅で折り返し */
-  word-break: break-word; /* 単語を必要に応じて折り返し */
+  white-space: pre-wrap;
+  word-break: break-word;
   box-sizing: border-box;
-  overflow: auto; /* はみ出す場合にスクロール */
+  overflow: auto;
+}
+
+/* PC用のスタイル調整 */
+@media (min-width: 601px) {
+  .App {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 8px 12px;
+    width: auto;
+    align-self: flex-start;
+  }
+
+  pre {
+    font-size: 1em;
+    padding: 15px;
+  }
 }
 
 /* スマートフォンサイズのスタイル調整 */
@@ -88,6 +116,7 @@ pre {
   button {
     font-size: 0.9em;
     padding: 8px;
+    width: 100%;
   }
 
   /* メール内容の表示領域 */
@@ -97,6 +126,6 @@ pre {
     white-space: pre-wrap;
     word-break: break-word;
     box-sizing: border-box;
-    overflow: auto; /* はみ出す場合にスクロール */
+    overflow: auto;
   }
 }
