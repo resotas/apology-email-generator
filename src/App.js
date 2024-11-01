@@ -1,7 +1,7 @@
-import './App.css';
 import React, { useState } from 'react';
 import TemplateOptions from './TemplateOptions';
 import EmailTemplate from './EmailTemplate';
+import './App.css';
 
 function App() {
   const [selectedTemplate, setSelectedTemplate] = useState('');
@@ -9,13 +9,17 @@ function App() {
 
   const handleTemplateChange = (template) => {
     setSelectedTemplate(template);
-    setFormData({}); // Reset form data when changing template
+    setFormData({}); // テンプレート変更時にフォームデータをリセット
   };
 
   return (
     <div className="App">
-      <h1>謝罪メール生成アプリ</h1>
-      <TemplateOptions onTemplateSelect={handleTemplateChange} formData={formData} setFormData={setFormData} />
+      <h1>ごめんねジェネレーター</h1>
+      <TemplateOptions
+        onTemplateSelect={handleTemplateChange}
+        formData={formData}
+        setFormData={setFormData}
+      />
       <EmailTemplate templateType={selectedTemplate} formData={formData} />
     </div>
   );
