@@ -27,8 +27,15 @@ function TemplateOptions({ onTemplateSelect, formData, setFormData }) {
         <input
           type="text"
           name="companyName"
-          placeholder="相手の会社名"
+          placeholder="会社名（例: △△株式会社）"
           value={formData.companyName || ''}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="departmentName"
+          placeholder="部署名（例: 〇〇部）"
+          value={formData.departmentName || ''}
           onChange={handleInputChange}
         />
         <input

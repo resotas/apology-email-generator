@@ -5,8 +5,8 @@ function EmailTemplate({ templateType, formData }) {
 
   const templates = {
     estimate: `
-      ${formData.companyName || '〇〇株式会社'}  
-      ${formData.contactName || '〇〇部 〇〇様'}
+      ${formData.companyName || '△△株式会社'}  
+      ${formData.departmentName || '〇〇部'} ${formData.contactName || '担当者名'} 様
       
       お世話になっております。  
       △△株式会社の${formData.senderName || 'ご自身の名前'}でございます。
@@ -18,8 +18,8 @@ function EmailTemplate({ templateType, formData }) {
       引き続きどうぞよろしくお願いいたします。
     `,
     reply: `
-      ${formData.companyName || '〇〇株式会社'}  
-      ${formData.contactName || '〇〇部 〇〇様'}
+      ${formData.companyName || '△△株式会社'}  
+      ${formData.departmentName || '〇〇部'} ${formData.contactName || '担当者名'} 様
       
       お世話になっております。  
       △△株式会社の${formData.senderName || 'ご自身の名前'}でございます。
@@ -31,8 +31,8 @@ function EmailTemplate({ templateType, formData }) {
       引き続きどうぞよろしくお願いいたします。
     `,
     mistakeReport: `
-      ${formData.companyName || '〇〇株式会社'}  
-      ${formData.contactName || '〇〇部 〇〇様'}
+      ${formData.companyName || '△△株式会社'}  
+      ${formData.departmentName || '〇〇部'} ${formData.contactName || '担当者名'} 様
       
       お世話になっております。  
       △△株式会社の${formData.senderName || 'ご自身の名前'}でございます。
