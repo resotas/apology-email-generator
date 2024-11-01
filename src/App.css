@@ -1,5 +1,4 @@
 /* 基本スタイル */
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -14,10 +13,11 @@ body {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   padding: 20px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* フォーム要素のスタイル */
@@ -46,13 +46,16 @@ button {
 /* スマートフォンサイズのスタイル調整 */
 @media (max-width: 600px) {
   .App {
-    width: 95%;
+    width: 100%;
     padding: 15px;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   h1, h2, h3 {
     font-size: 1.2em;
     text-align: center;
+    margin: 0;
   }
 
   input[type="text"], select, textarea {
@@ -63,12 +66,16 @@ button {
   button {
     font-size: 0.9em;
     padding: 8px;
+    width: 100%;
   }
 
   /* メール内容の表示領域 */
   pre {
     font-size: 0.9em;
     padding: 10px;
-    overflow-wrap: break-word;
+    white-space: pre-wrap; /* 改行で折り返しを有効にする */
+    word-wrap: break-word; /* 長い単語を折り返す */
+    overflow: hidden;
+    box-sizing: border-box;
   }
 }
