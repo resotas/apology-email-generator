@@ -20,7 +20,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 中央揃え */
+  align-items: center;
   overflow: hidden;
 }
 
@@ -45,7 +45,7 @@ button {
   border-radius: 4px;
   background-color: #4CAF50;
   color: white;
-  width: auto;
+  width: fit-content;
   min-width: 100px;
   align-self: center; /* ボタンを中央に配置 */
 }
@@ -60,9 +60,9 @@ pre {
   width: 100%;
   max-width: 100%;
   white-space: pre-wrap; /* 長いテキストを画面幅で折り返し */
-  word-wrap: break-word;
-  overflow: hidden;
+  word-break: break-word; /* 単語を必要に応じて折り返し */
   box-sizing: border-box;
+  overflow: auto; /* はみ出す場合にスクロール */
 }
 
 /* スマートフォンサイズのスタイル調整 */
@@ -95,8 +95,8 @@ pre {
     font-size: 0.9em;
     padding: 10px;
     white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow: hidden;
+    word-break: break-word;
     box-sizing: border-box;
+    overflow: auto; /* はみ出す場合にスクロール */
   }
 }
