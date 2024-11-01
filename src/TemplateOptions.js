@@ -9,7 +9,7 @@ function TemplateOptions({ onTemplateSelect, formData, setFormData }) {
   const handleTemplateChange = (e) => {
     const selectedTemplate = e.target.value;
     onTemplateSelect(selectedTemplate);
-    setFormData({ ...formData, template: selectedTemplate }); // テンプレート名を明示的に保存
+    setFormData({ ...formData, template: selectedTemplate }); // 選択したテンプレートを設定
   };
 
   return (
@@ -27,7 +27,7 @@ function TemplateOptions({ onTemplateSelect, formData, setFormData }) {
         <input
           type="text"
           name="companyName"
-          placeholder="会社名（例: △△株式会社）"
+          placeholder="相手の会社名（例: 〇〇株式会社）"
           value={formData.companyName || ''}
           onChange={handleInputChange}
         />
@@ -47,13 +47,19 @@ function TemplateOptions({ onTemplateSelect, formData, setFormData }) {
         />
         <input
           type="text"
+          name="senderCompanyName"
+          placeholder="自社の会社名（例: △△株式会社）"
+          value={formData.senderCompanyName || ''}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
           name="senderName"
           placeholder="あなたの名前"
           value={formData.senderName || ''}
           onChange={handleInputChange}
         />
 
-        {/* ミス報告テンプレート用の追加フィールド */}
         {formData.template === "mistakeReport" && (
           <>
             <textarea
